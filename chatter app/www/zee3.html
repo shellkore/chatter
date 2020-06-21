@@ -38,7 +38,7 @@
 
       <!--header part -->
 
-      <div class="cover no-padding" style="background-image:url(img/zeehead.png)">
+      <div class="cover no-padding blend-soft-light align-center grey-800" style="background-image:url(img/zeehead.png)">
         <div class="space-big"></div>
         <div class="space-huge"></div>
         <div class="list gradient no-border">
@@ -71,27 +71,44 @@
 <div class="tab-content active" id="tabChats">
  
 <ol class="chat">
-
-<!-- <li class="other">
+<li class="other">
 <div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
 <div class="msg">
-<p>Hola!</p>
+<p>Hey!</p>
+<p>Karan is such poor boy ? <emoji class="sad"/></p>
+<time>- klen45</time>
 </div>
 </li>
+<li class="other">
+<div class="avatar"><img src=https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+<div class="msg">
 
-<li class="self">
+<p>Karan is acting weird. He should get some knowledge of love chemistry <emoji class="books"/></p>
+
+<time>- Abhi2</time>
+</div>
+</li>
+<li class="other">
+<div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+<div class="msg">
+<p>Oh ! Shwati is also such a nautanki. She is evil <emoji class="suffocated"/></p>
+<time>- SimranKW</time>
+</div>
+</li>
+<!-- <li class="self">
 <div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
 <div class="msg">
-<p>Puff...</p>
-<p>Aún estoy haciendo el contexto de Góngora... <emoji class="books"/></p>
-<p>Mejor otro día</p>
+<p>Hey, everyone</p>
+<p>I am new person here.I believe karan is right. </p>
+<time>- armish24</time>
 </div>
 </li> -->
 
 
+
+
 </ol>
-<!-- <input class="textarea" type="text" id="mewrite" placeholder="Type here!"/><div class="emojis"  onclick="sendmsg()"></div> -->
-<input class="textarea" type="text" id="mewrite" placeholder="Type here!"/><div class="emojis"><i class="icon ion-paper-airplane"  onclick="sendmsg()"></i></div>
+<input class="textarea" type="text" id="mewrite" placeholder="Type here!"/><div class="emojis"><i class="icon ion-paper-airplane"></i></div>
 </div>
 
 
@@ -153,6 +170,9 @@
     
     
   </div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <button class="blue full">SUBMIT</button>
   <!-- <div class="powr-poll" id="f9ebfeed_1592675245"></div><script src="https://www.powr.io/powr.js?platform=html"></script> -->
 
 
@@ -186,6 +206,12 @@
     </div>
   </div>
 </div>
+
+
+  
+      
+        
+       
 </div>
 
   
@@ -194,7 +220,7 @@
 
        <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
-      <script>
+      <!-- <script>
         var firebaseConfig = {
     apiKey: "AIzaSyD6iyUlPbeLNdv0jn-aKnS4vykI2kzFV_c",
     authDomain: "vil-hack.firebaseapp.com",
@@ -223,102 +249,50 @@ docRef.get().then(function(doc) {
     console.log("Error getting document:", error);
 });
         }
-      </script>
+      </script> -->
 
-
-
-<script>
-var resp = httpGet("https://chatter-96676.firebaseio.com/dishathon/room/103.json?print=pretty");
-console.log(resp);
-console.info(typeof(resp))
-// var resp = '{"-MAHMHA-OLgEYVUUwSop":{"message":"What did I miss ??","username":"shivam"},"-MAHMOjRTxGmgOAixyPr":{"message":"Nothing we have just seen the recap","username":"arpit"}}';
-var data = JSON.parse(resp);
-html = ''
-for (let key in data) {
-        console.log(data[key].message);
-        console.log(data[key].username);
-    
-        if(data[key].username == 'arpit')
-        {
-          $( "ol" ).append( '<li class="self"><div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div><div class="msg"><p>'+ data[key].message + '</p><time>arpit</time></div></li>' );
-          // html += '<li class="self"><div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div><div class="msg"><p>'+ data[key].message + '</p></div></li>'
-        }
-        else
-        {
-          $( "ol" ).append( '<li class="other"><div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div><div class="msg"><p>'+ data[key].message + '</p><time>' + data[key].username + '</time></div></li>' ); 
-          // html += '<li class="other"><div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div><div class="msg"><p>'+ data[key].message + '</p></div></li>'
-        }
-    }
-// html = '<ol class="chat">'+html+'</ol><input class="textarea" type="text" placeholder="Type here!"/><div class="emojis"></div>'
-// document.getElementById("tabChats").innerHTML = html;
-
-var input = document.getElementById("mewrite");
+      <script>
+        var input = document.getElementById("mewrite");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
    var msg = document.getElementById("mewrite").value;
-   $( "ol" ).append( '<li class="self"><div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div><div class="msg"><p>'+ msg + '</p></div></li>' );
+   $( "ol" ).append( '<li class="self"><div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div><div class="msg"><p>'+ msg + '</p><time>- armish24</time></div></li>' );
    document.getElementById("mewrite").value = '';
+  
 
-  //  $.post("https://chatter-96676.firebaseio.com/dishathon/room/103.json?x-http-method-override=PUT",
-  // {
-  //   "username": "arpit",
-  //   "message": "did u watch yesterdays episode ??"
-  // },
-  // function(data, status){
-  //   alert("Data: " + data + "\nStatus: " + status);
+
+  setTimeout(() => {
+    $( "ol" ).append( `<li class="other">
+<div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+<div class="msg">
+<p><emoji class="scream"/></p>
+<p>See some Someone is kindly side of karan. Oh please see the remaining show <emoji class="please"/></p>
+<time>- Abhi2</time>
+</div>
+</li>` );
+  }, 4000);
+
+  setTimeout(() => {
+    $( "ol" ).append( `<li class="other">
+<div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+<div class="msg">
+<p>Yeah Man, seriously wait for the ending. SOmething gonna happen<emoji class="hearth_blue"/></p>
+<time>- Kabhi43</time>
+</div>
+</li>` );
+  }, 8000);
+
+  //  $.post("https://chatter-96676.firebaseio.com/dishathon/room/103.json",JSON.stringify({"username": "arpit",
+  //   "message": "did u watch yesterdays episode ??"}))
+  // .done(function( data ) {
+  //   alert( "Data Loaded: " + data );  
   // });
-
-//   var http = new XMLHttpRequest();
-// var url = 'https://chatter-96676.firebaseio.com/dishathon/room/103.json?x-http-method-override=POST';
-// var params = 'username=arpit&message=lollolloll';
-// http.open('POST', url, true);
-
-// //Send the proper header information along with the request
-// http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-// http.onreadystatechange = function() {//Call a function when the state changes.
-//     if(http.readyState == 4 && http.status == 200) {
-//         alert(http.responseText);
-//     }
-    
-// }
-// http.send(params);
-
-// const createResponse =
-//         await fetch(environment.create, {
-//           method: 'POST',
-//           body: JSON.stringify(requestBody),
-//           headers:{
-//             'Content-Type': 'application/json'
-//           }
-//         });
-//       console.log('Success');
-//       console.log(createResponse.status);
-
-  }
+}
 });
 
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
-}
-
-function sendmsg()
-    {
-       var msg = document.getElementById("mewrite").value;
-       $( "ol" ).append( '<li class="self"><div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div><div class="msg"><p>'+ msg + '</p></div></li>' );
-       $.post("https://chatter-96676.firebaseio.com/dishathon/room/103.json",JSON.stringify({"username": "arpit",
-    "message": msg}))
-  .done(function( data ) {
-    // alert( "Data Loaded: " + data );
-  });
-       document.getElementById("mewrite").value = '';
-      }
-</script>
+ 
+      </script>
     </body>
   
 </html>
