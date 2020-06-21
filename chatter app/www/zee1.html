@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="utf-8">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/chat.css">
+        <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+        <script type="text/javascript" src="mobileui/mobileui.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+        <title>zee</title>
+    </head>
+    <style>
+        body {
+  background-color: #DEEAF6;
+}
+
+</style>
+ <div>
+      <body class="has-header grey-200 content">
+      <div class="header " style="background-color:#d11919">
+        <div class="left">
+          <button class="icon ion-navicon"></button>
+        </div>
+        <div class="title">
+    <span class="text-big text-bold">ZEE TV</span>
+        </div>
+
+        <div class="right">
+          <button class="icon ion-android-search"></button>
+          <button class="icon ion-android-more-vertical"></button>
+        </div>
+      </div>
+
+      <!--header part -->
+
+      <div class="cover no-padding" style="background-image:url(img/zeehead.png)">
+        <div class="space-big"></div>
+        <div class="space-huge"></div>
+        <div class="list gradient no-border">
+          <div class="item space-small row text-white align-center">
+            <div class="col">
+              <span class="text-big text-bold">75</span>
+              <p class="text-small text-light text-grey-400">Active</p>
+            </div>
+            <div class="col">
+              <span class="text-big text-bold">37K</span>
+              <p class="text-small text-light text-grey-400">FOLLOWERS</p>
+            </div>
+            <div class="col">
+              <span class="text-big text-bold">265</span>
+              <p class="text-small text-light text-grey-400">FOLLOWING</p>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+<!--body-->
+
+<div class="red sub shadow tab">
+  <button class="text-white active" onclick="openTab('tabChats')">
+    Chats <span class="badge white text-green-900">1</span>
+  </button>
+  <button class="text-white" onclick="openTab('tabStatus')">Play & Win</button>
+  <button class="text-white" onclick="openTab('tabCalls')">Trivia</button>
+</div>
+<div class="tab-content active" id="tabChats">
+ 
+<ol class="chat">
+
+<li class="other">
+<div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+<div class="msg">
+<p>Hola!</p>
+</div>
+</li>
+
+<li class="self">
+<div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+<div class="msg">
+<p>Puff...</p>
+<p>Aún estoy haciendo el contexto de Góngora... <emoji class="books"/></p>
+<p>Mejor otro día</p>
+</div>
+</li>
+<li class="other">
+<div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+<div class="msg">
+<p>Qué contexto de Góngora? <emoji class="suffocated"/></p>
+</div>
+</li>
+</ol>
+<input class="textarea" type="text" placeholder="Type here!"/><div class="emojis"></div>
+</div>
+
+
+
+<div class="tab-content" id="tabStatus">
+  <div class="list">
+    <div class="item small-space grey-300 text-grey-700">
+      <p>
+       Who is real wife of Karan ?
+      </p>
+    </div>
+    <div class="item">
+      <p>Radha</p>
+      <div class="right">
+        <input type="radio" name="user" class="teal">
+      </div>
+    </div>
+    <div class="item">
+      <p>Ananya</p>
+      <div class="right">
+        <input type="radio" name="user" class="teal" checked>
+      </div>
+    </div>
+    <div class="item">
+      <p>Pragati</p>
+      <div class="right">
+        <input type="radio" name="user" class="teal">
+      </div>
+    </div>
+    <div class="item">
+      <p>Priya</p>
+      <div class="right">
+        <input type="radio" name="user" class="teal">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+
+  <div class="list">
+    <div class="item small-space grey-300 text-grey-700">
+      <p>
+        Rate performance of ananya
+      </p>
+    </div>
+    <div class="item range">
+      <div class="left">
+        <i class="icon ion-ios-heart-outline"></i>
+      </div>
+      <input type="range" min="0" max="100" value="32">
+      <div class="right">
+        <i class="icon ion-ios-heart"></i>
+      </div>
+    </div>
+   
+    
+    
+  </div>
+  <!-- <div class="powr-poll" id="f9ebfeed_1592675245"></div><script src="https://www.powr.io/powr.js?platform=html"></script> -->
+
+
+</div>
+
+
+<div class="tab-content" id="tabCalls">
+  <div class="list padding grey-100">
+    <div class="item white mark border-green margin-button shadow">
+      <h2>Actor Abhishek playing the role of Karan, is actually very religious. Every year he visit kedarnath.</h2>
+      <p class="text-grey">678 <i class="icon ion-ios-heart"></i></p>
+      <!-- <p class="text-green">Last activity on 5 minutes ago.</p> -->
+    </div>
+    <div class="space"></div>
+    <div class="item white mark border-green margin-button shadow">
+    <h2><strong>The place shoot in this show is actually a real palace of king Kabirnathpuran.</strong></h2>
+    <p class="text-grey">478 <i class="icon ion-ios-heart"></i></p>
+    <!-- <p class="text-green">Last activity on 5 minutes ago.</p> -->
+    </div>
+    <div class="space"></div>
+    <div class="item white mark border-purple margin-button shadow">
+      <h2><strong>The first director of this show left the this show just after its start.</strong></h2>
+      <p class="text-grey">178 <i class="icon ion-ios-heart"></i></p>
+      <!-- <p class="text-green">Last activity on 5 minutes ago.</p> -->
+    </div>
+    <div class="space"></div>
+    <div class="item white mark border-orange margin-button shadow">
+      <h2><strong>This show is in TOP 5 TRP rating program since last 8 weeks.</strong></h2>
+      <p class="text-grey">778 <i class="icon ion-ios-heart"></i></p>
+      <!-- <p class="text-green">Last activity on 5 minutes ago.</p> -->
+    </div>
+  </div>
+</div>
+
+
+  
+      
+        
+       
+</div>
+
+  
+
+<br>
+
+       <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script>
+        var firebaseConfig = {
+    apiKey: "AIzaSyD6iyUlPbeLNdv0jn-aKnS4vykI2kzFV_c",
+    authDomain: "vil-hack.firebaseapp.com",
+    databaseURL: "https://vil-hack.firebaseio.com",
+    projectId: "vil-hack",
+    storageBucket: "vil-hack.appspot.com",
+    messagingSenderId: "960960482726",
+    appId: "1:960960482726:web:49043ad3d400150e91d367"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ const db = firebase.firestore();
+
+        function showConfig() {
+          var docRef = db.collection("consumer").doc(window.localStorage.getItem("mail"));
+
+docRef.get().then(function(doc) {
+    if (doc.exists) {
+        var macx = doc.data().mac
+        document.getElementById('config').innerHTML = `Name: voda <br> Password: ${macx}`
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+        }
+      </script>
+
+
+
+<script>
+
+var resp = '{"-MAHMHA-OLgEYVUUwSop":{"message":"What did I miss ??","username":"shivam"},"-MAHMOjRTxGmgOAixyPr":{"message":"Nothing we have just seen the recap","username":"arpit"}}';
+var data = JSON.parse(resp);
+html = ''
+for (var key in data) {
+    console.log(data[key].message);
+    console.log(data[key].username);
+
+    if(data[key].username == 'arpit')
+    {
+      html += '<li class="other"><div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div><div class="msg"><p>'+ data[key].message + '</p></div></li>'
+    }
+    else
+    {
+        html += '<li class="other"><div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div><div class="msg"><p>'+ data[key].message + '</p></div></li>'
+    }
+}
+document.getElementById("tabChats").innerHTML = html;
+
+</script>
+    </body>
+  
+</html>

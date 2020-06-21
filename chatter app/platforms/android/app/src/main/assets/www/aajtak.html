@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="utf-8">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/chat.css">
+        <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+        <script type="text/javascript" src="mobileui/mobileui.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+        <title>aajtak</title>
+    </head>
+    <style>
+        body {
+  background-color: #DEEAF6;
+}
+
+</style>
+ <div>
+      <body class="has-header grey-200 content">
+      <div class="header " style="background-color:#d11919">
+        <div class="left">
+          <button class="icon ion-navicon"></button>
+        </div>
+        <div class="title">
+    <span class="text-big text-bold">AAJ TAK</span>
+        </div>
+
+        <div class="right">
+          <button class="icon ion-android-search"></button>
+          <button class="icon ion-android-more-vertical"></button>
+        </div>
+      </div>
+
+      <!--header part -->
+
+      <div class="cover no-padding blend-soft-light align-center grey-800" style="background-image:url(img/aajhead.jpg)">
+        <div class="space-big"></div>
+        <div class="space-huge"></div>
+        <div class="list gradient no-border">
+          <div class="item space-small row text-white align-center">
+            <div class="col">
+              <span class="text-big text-bold">75</span>
+              <p class="text-small text-light text-grey-400">Active</p>
+            </div>
+            <div class="col">
+              <span class="text-big text-bold">37K</span>
+              <p class="text-small text-light text-grey-400">FOLLOWERS</p>
+            </div>
+            <div class="col">
+              <span class="text-big text-bold">265</span>
+              <p class="text-small text-light text-grey-400">FOLLOWING</p>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+<!--body-->
+
+<div class="red sub shadow tab">
+  <button class="text-white active" onclick="openTab('tabChats')">
+    Chats <span class="badge white text-green-900">1</span>
+  </button>
+  <button class="text-white" onclick="openTab('tabStatus')">Play & Win</button>
+  <button class="text-white" onclick="openTab('tabCalls')">Trivia</button>
+</div>
+<div class="tab-content active" id="tabChats">
+ 
+<ol class="chat">
+<li class="other">
+<div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+<div class="msg">
+<p>Hey</p>
+<p>Anyone watching this show</p>
+<time>- karan56</time>
+</div>
+</li>
+
+<li class="other">
+<div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+<div class="msg">
+<p>Ypp, this is prime time. no one wants to miss this</p>
+<time>- vayu4448</time>
+</div>
+</li>
+
+</ol>
+<input class="textarea" type="text" id="mewrite" placeholder="Type here!"/><div class="emojis"><i class="icon ion-paper-airplane"></i></div>
+</div>
+<div class="tab-content" id="tabStatus">
+  <!-- <div class="powr-poll" id="f9ebfeed_1592675245"></div><script src="https://www.powr.io/powr.js?platform=html"></script> -->
+</div>
+
+
+<div class="tab-content" id="tabCalls">
+  
+</div>
+
+
+  
+      
+        
+       
+</div>
+
+  
+
+<br>
+
+       <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script>
+        var firebaseConfig = {
+    apiKey: "AIzaSyD6iyUlPbeLNdv0jn-aKnS4vykI2kzFV_c",
+    authDomain: "vil-hack.firebaseapp.com",
+    databaseURL: "https://vil-hack.firebaseio.com",
+    projectId: "vil-hack",
+    storageBucket: "vil-hack.appspot.com",
+    messagingSenderId: "960960482726",
+    appId: "1:960960482726:web:49043ad3d400150e91d367"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ const db = firebase.firestore();
+
+        function showConfig() {
+          var docRef = db.collection("consumer").doc(window.localStorage.getItem("mail"));
+
+docRef.get().then(function(doc) {
+    if (doc.exists) {
+        var macx = doc.data().mac
+        document.getElementById('config').innerHTML = `Name: voda <br> Password: ${macx}`
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+        }
+      </script>
+    </body>
+  
+</html>

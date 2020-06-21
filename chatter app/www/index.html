@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="mobileui/fonts.css">
+    <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="utf-8">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="mobileui/mobileui.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+         -->
+        <title>Chatter App</title>
+        <style>
+            #titleDiscoveryNow {
+              font-family: 'Chewy', cursive;
+              font-size: 45px;
+              line-height: 24px;
+              z-index: 33;
+              position: relative;
+            }
+            .red{
+              
+    color: rgba(255,255,255,.9);
+    background-color: #e60000 !important;
+}
+          </style>
+    </head>
+    <!-- <body> -->
+<!-- start my orignal code -->
+<body >
+  <div id="firstpage" class="swiper-container swiper-container-fullscreen">
+      <div class="swiper-wrapper">
+          
+          <!-- Add slide 3 -->
+          <div class="swiper-slide vertical-align-center red">
+            <img src="img/message.png">
+          
+            <h1 id="titleDiscoveryNow">Chatter</h1>
+            <div class="space"></div>
+            <p>explore while watching!</p>
+            <div class="space"></div>
+            <div class="list no-border opacity-80">
+        
+              <div class="space"></div>
+              <div class="item icon ion-android-lock border-grey border-bottom">
+                <input class="placeholder-white text-white" id="getNumber" type="number" placeholder="Enter your DishTV customer number.">
+              </div>
+            </div>
+            <button class="border-white text-white radius margin-top" onclick="loader()">
+                Let's go !
+            </button>
+           
+          </div>
+         
+
+      </div>
+      <!-- Add Pagination -->
+      <!-- <div class="swiper-pagination swiper-pagination-white"></div> -->
+  </div>
+
+<div id="secondpage">
+    <!-- <div class="page"> -->
+        <div class="cover vertical-align-center red-900 align-center blend-soft-light" style="background-image:url('img/zuzu.jpg')">
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <p class="text-white">WELCOME TO</p>
+  <h1 id="titleDiscoveryNow" class="text-blue">Chatter</h1>
+  <p class="text-grey-300">Explore while watching!</p>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="row">
+    <div class="col-90 col-center">
+      <div class="list no-border opacity-80">
+        
+        <div class="space"></div>
+        <div class="item icon ion-android-lock border-grey border-bottom">
+          <input class="placeholder-white text-white" id="getNumber" type="number" placeholder="Enter your DishTV customer number.">
+        </div>
+      </div>
+      <div class="space"></div>
+      <div class="space"></div>
+      <div class="space"></div>
+  <div class="space"></div>
+      <button class="border-blue text-blue full" onclick="storeConsumerData()">SIGN IN</button>
+    </div>
+  </div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="bottom gradient">
+    <!-- <button class="text-grey">SIGN UP</button> -->
+  </div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+        </div>
+<!-- </div> -->
+</div>
+
+  <script type="text/javascript">
+  document.getElementById('secondpage').style.display = "none";
+    new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    function nextto2() {
+      document.getElementById('firstpage').style.display = "none";
+      document.getElementById('secondpage').style.display = "block";
+    }
+    
+//     var firebaseConfig = {
+//     apiKey: "AIzaSyD6iyUlPbeLNdv0jn-aKnS4vykI2kzFV_c",
+//     authDomain: "vil-hack.firebaseapp.com",
+//     databaseURL: "https://vil-hack.firebaseio.com",
+//     projectId: "vil-hack",
+//     storageBucket: "vil-hack.appspot.com",
+//     messagingSenderId: "960960482726",
+//     appId: "1:960960482726:web:49043ad3d400150e91d367"
+//   };
+//   // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
+//  const db = firebase.firestore();
+
+  function loader(){
+    loading('Please wait...')
+    setTimeout(() => {
+      window.location='main.html'
+    }, 1000);
+        // var mail= document.getElementById("getEmail").value;
+        // window.localStorage.setItem("mail", mail);
+        // var phone= document.getElementById("getNumber").value;
+        // var getuuid = device.uuid;
+        // var getserial = device.serial;
+        //   if(getuuid == '284eca05fbfbf69e') {
+        //     macad = 'a04c5b672c24';
+        //   }
+        //   else if(getuuid == '8bf9e9f3f651b1a6') {
+        //     macad = '508f4ca0187d';
+        //   }
+        //   else {
+        //     macad = '40b07664be14';
+        //   }
+    
+        //     const docref=db.doc("consumer/"+mail)
+        //     docref.set({
+        //      email:mail,
+        //      mobile:phone,
+        //      uuid:getuuid,
+        //      serial:getserial,
+        //      mac:macad
+        //     }).then(function(){
+        //       console.log("saved");
+        //       window.location = 'index3.html';
+
+        //     }).catch(function(error){
+        //       console.log("error");
+        //     })
+
+        }
+  </script>
+  
+<!-- </body> -->
+<!-- end code here -->
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
