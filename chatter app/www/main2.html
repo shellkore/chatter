@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="utf-8">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+        <script type="text/javascript" src="mobileui/mobileui.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+        <title>Main</title>
+    </head>
+    <style>
+        body {
+  background-color: #DEEAF6;
+}
+
+.ccards {
+  margin: 4% 5%;
+}
+
+.ccardh {
+  width: 90%;
+  height: 40%;
+  border-radius: 5px;
+  box-shadow: -10px -10px 10px 1px rgba(255,255,255,1);
+  border: 0.50px solid white;
+  margin:5% 5% 1% 4%;
+  
+}
+
+.setkaro {
+  margin-left: 4rem;
+  width: 132px;
+  height: 99px;
+}
+
+.ccard3 {
+  width: 90%;
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: -10px -10px 10px 1px rgba(255,255,255,1);
+  border: 0.50px solid white;
+  margin:5% 5% 1% 4%;
+}
+
+.ccard {
+  width: 25%;
+  /* height: 90px; */
+  border-radius: 5px;
+  box-shadow: -10px -10px 10px 1px rgba(255,255,255,1);
+  border: 0.50px solid white;
+  display: inline-block;
+  margin : 3%;
+  padding-top: 4%;
+}
+
+
+
+.inset {
+  box-shadow: inset -7px -7px 10px 1px rgba(255,255,255,1);
+}
+
+.ccard-shadow2 {
+  box-shadow: 15px 17px 10px rgb(190, 203, 217);
+}
+
+
+.ccard2 {
+  margin: 15% 15%;
+  border: none;
+  box-shadow: inset 3px 3px 6px rgb(190, 203, 217),
+      inset 3px 3px 6px rgba(255,255,255,0.5),
+    inset -3px -3px 6px 1px rgba(255,255,255,0.5);
+}
+
+    </style>
+ <div>
+      <body class="has-header grey-200 content">
+      <div class="header " style="background-color:#d11919">
+        <div class="left">
+          <button class="icon ion-navicon"></button>
+        </div>
+        <div class="title">
+    <span class="text-big text-bold">Chatter</span>
+        </div>
+
+        <div class="right">
+          <button class="icon ion-android-search"></button>
+          <button class="icon ion-android-more-vertical"></button>
+        </div>
+      </div>
+
+
+      <div class="ccardh inset ccard-shadow2 cover no-padding" style="background-color:#d11919">
+
+
+
+  
+        <div class="padding deep-white align-center">
+          <div id="progressMetricUser" class="progress-semicircle"
+             title="Total Game Points"
+             subTitle=""
+             color="white"
+             textColor="white"
+             textMargin="100px 0"
+             width="250px"
+             height="250px"
+             trailColor="white-opacity-10"
+             textSize="40px"
+             titleSize="16px"
+             textWeight="300"
+             value="21.3"
+             text=""
+             strokeWidth="8"
+             trailWidth="2">
+          </div>
+          
+          <button class="margin opacity-40 border-white text-white radius" onclick="ProgressSemicircle.rebind()">CHECK GAME POINTS</button>
+        </div>
+        
+       
+</div>
+<div class="ccard3 inset ccard-shadow2" style="text-align:center;height: auto;">
+<button id="config" style="padding-top: 1rem;font-size: large;" onclick="showConfig()">SELECT YOUR CHANNEL</button>
+</div>
+<div class="ccards">
+ 
+<div class="ccard inset ccard-shadow2">
+   <button class="setkaro" onclick="c1()"><img src="img/zee_tv.jpg" > </button></div>  
+
+
+<div class="ccard inset ccard-shadow2">
+  <button class="setkaro" onclick="c2()"><img src="img/aaj_tak.jpg" ></button>  </div>  
+
+  <div class="ccard inset ccard-shadow2">
+    <button class="setkaro" onclick="f1()"><img src="img/mtv.png" > </button></div>  
+ 
+ 
+ <div class="ccard inset ccard-shadow2">
+   <button class="setkaro" onclick="f2()"><img src="img/fox.png" ></button>  </div>
+   
+   <div class="ccard inset ccard-shadow2">
+    <button class="setkaro" onclick="f2()"><img src="img/colors_in.jpg" ></button>  </div>
+    
+    <div class="ccard inset ccard-shadow2">
+      <button class="setkaro" onclick="f2()"><img src="img/cartoon-network.png" ></button>  </div>  
+ 
+</div>  </div>
+
+<div class="ccard3 inset ccard-shadow2">
+  <button class="red full" onclick="location.href = 'input.html'" >EXPLORE MORE</button>
+</div>
+
+  
+</div>
+<div class="list" id="hstatus">
+</div>
+<br>
+
+       <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+<script>
+  function c1(){
+    window.location='zee.html';
+  }
+  function c2(){
+    window.location='aajtak.html';
+  }
+</script>
+
+      <!-- <script>
+        var firebaseConfig = {
+    apiKey: "AIzaSyD6iyUlPbeLNdv0jn-aKnS4vykI2kzFV_c",
+    authDomain: "vil-hack.firebaseapp.com",
+    databaseURL: "https://vil-hack.firebaseio.com",
+    projectId: "vil-hack",
+    storageBucket: "vil-hack.appspot.com",
+    messagingSenderId: "960960482726",
+    appId: "1:960960482726:web:49043ad3d400150e91d367"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ const db = firebase.firestore();
+
+        function showConfig() {
+          var docRef = db.collection("consumer").doc(window.localStorage.getItem("mail"));
+
+docRef.get().then(function(doc) {
+    if (doc.exists) {
+        var macx = doc.data().mac
+        document.getElementById('config').innerHTML = `Name: voda <br> Password: ${macx}`
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+        }
+      </script> -->
+    </body>
+  
+</html>
