@@ -8,7 +8,8 @@ The idea behind is draw more customers to the Television by engaging them more i
 #To run the app
 
 <br>
-1. Install node and cordova
+1. Install node and cordova <br>
+2. Connect your mobile device with computer <br>
 2. execute "cordova run android"
 
 
